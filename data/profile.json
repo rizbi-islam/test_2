@@ -1,0 +1,165 @@
+{
+    "personal": {
+      "name": "Rizbi Islam",
+      "title": "Software Quality Assurance Engineer",
+      "tagline": "Expert in Manual & Automation Testing",
+      "email": "rizbi.cse@gmail.com",
+      "phone": "(+880) 1609084529",
+      "location": "Dhaka, Bangladesh",
+      "summary": "Result-oriented Software Quality Assurance (SQA) Engineer with hands-on experience in manual and automation testing of web and API systems. Skilled in ensuring high-quality releases through functional, regression, and smoke testing, defect lifecycle management, and Agile/Scrum methodologies.",
+      "social": {
+        "linkedin": "https://linkedin.com/in/rizbi-islam",
+        "github": "https://github.com/rizbi-islam",
+        "portfolio": "https://rizbi-islam.github.io/r_repo"
+      },
+      "resume": "assets/resume.pdf"
+    },
+    "skills": {
+      "automation": [
+        { "name": "Selenium WebDriver", "level": 95 },
+        { "name": "TestNG", "level": 90 },
+        { "name": "Playwright", "level": 85 },
+        { "name": "Cypress", "level": 80 },
+        { "name": "Java", "level": 85 }
+      ],
+      "testingTools": [
+        { "name": "Postman", "level": 95 },
+        { "name": "Newman", "level": 90 },
+        { "name": "JMeter", "level": 75 },
+        { "name": "Locust", "level": 70 },
+        { "name": "TestRail", "level": 85 }
+      ],
+      "methodologies": [
+        "Agile/Scrum",
+        "SDLC/STLC",
+        "API Testing",
+        "Performance Testing",
+        "Regression Testing",
+        "UAT Coordination"
+      ],
+      "databases": ["MySQL", "MongoDB"],
+      "versionControl": ["Git", "GitHub"],
+      "coreCompetencies": [
+        "Automation Framework Design",
+        "Defect Tracking & Reporting",
+        "Continuous Improvement",
+        "Team Collaboration"
+      ]
+    },
+    "experience": [
+      {
+        "id": 1,
+        "company": "RK Software (Bangladesh) Limited",
+        "position": "IT Executive & QA Engineer",
+        "period": "March 2025 – Present",
+        "location": "Dhaka, Bangladesh",
+        "achievements": [
+          "Performed end-to-end testing of full-stack systems including web UIs and backend logic",
+          "Designed and executed manual test cases (functional, UI/UX, regression) ensuring product stability and performance",
+          "Conducted RESTful API testing using Postman and automated with Newman, producing detailed HTML reports",
+          "Managed the complete defect lifecycle and coordinated fixes and retests for timely releases",
+          "Contributed to two national-level government projects (DNCC & CCC Revenue Management Systems), ensuring system stability in live environments"
+        ],
+        "technologies": ["Selenium", "Postman", "Newman", "Jira", "Node.js", "Agile"]
+      },
+      {
+        "id": 2,
+        "company": "IT Directorate, Bangladesh Army",
+        "position": "QA Engineer (Part-time)",
+        "period": "Mar 2025 - Nov 2025",
+        "location": "Dhaka, Bangladesh · Remote",
+        "project": "IT-enabled Revenue Automation System (DNCC)",
+        "achievements": [
+          "Performed end-to-end QA for a production government revenue automation system",
+          "Designed and executed manual test cases: functional, regression, smoke, and UAT",
+          "Conducted REST API testing using Postman and Newman; validated backend logic for Node.js services",
+          "Automated critical UI workflows using Selenium WebDriver + TestNG, Playwright, and Cypress",
+          "Executed performance and load testing using JMeter and Locust",
+          "Managed test case execution and reporting with TestRail; tracked defects using Jira",
+          "Collaborated with developers and stakeholders in Agile/Scrum and remote environments"
+        ],
+        "technologies": ["Selenium", "Playwright", "Cypress", "JMeter", "Locust", "TestRail", "Jira"]
+      },
+      {
+        "id": 3,
+        "company": "Freelance & Contract Projects",
+        "position": "Software QA Engineer",
+        "period": "2023 – 2025",
+        "location": "Remote",
+        "achievements": [
+          "Developed and executed test plans for various web applications and APIs",
+          "Built automation frameworks using Selenium WebDriver and TestNG",
+          "Collaborated with development teams to implement QA processes in Agile environments",
+          "Performed UAT and regression testing to ensure product quality before release",
+          "Created comprehensive test documentation and reports for stakeholders"
+        ],
+        "technologies": ["Selenium", "TestNG", "Postman", "Agile"]
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "SauceDemo Automated Testing",
+        "description": "Developed an end-to-end test automation framework using Selenium WebDriver and TestNG. Implemented the Page Object Model (POM) and Allure Reporting for visual documentation. Automated complete eCommerce workflows: login, product selection, cart operations, and checkout validation.",
+        "technologies": ["Selenium WebDriver", "TestNG", "Page Object Model", "Allure Reporting", "Java"],
+        "category": "automation",
+        "link": "#",
+        "github": "#"
+      },
+      {
+        "id": 2,
+        "title": "Demo Evershop (API & Web Automation)",
+        "description": "Automated API testing using Postman & Newman, generating detailed HTML reports. Built a scalable Selenium WebDriver + TestNG automation framework following the POM pattern.",
+        "technologies": ["Postman", "Newman", "Selenium", "TestNG", "HTML Reports"],
+        "category": "api",
+        "link": "#",
+        "github": "#"
+      },
+      {
+        "id": 3,
+        "title": "DNCC Revenue Automation System",
+        "description": "End-to-end QA for government revenue automation system. Conducted functional, regression, smoke, and UAT testing. Automated UI workflows with Selenium, Playwright, and Cypress. Performance testing with JMeter and Locust.",
+        "technologies": ["Selenium", "Playwright", "Cypress", "JMeter", "Locust", "UAT"],
+        "category": "performance",
+        "link": "#",
+        "github": "#"
+      },
+      {
+        "id": 4,
+        "title": "Government Revenue System QA",
+        "description": "Comprehensive quality assurance for a national-level government revenue automation system, involving manual testing, API testing with Postman/Newman, UI automation with Selenium/Playwright/Cypress, and performance testing with JMeter/Locust.",
+        "technologies": ["Manual Testing", "API Testing", "UI Automation", "Performance Testing"],
+        "category": "full-stack",
+        "link": "#",
+        "github": "#"
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc. in Computer Science & Engineering (CSE)",
+        "institution": "Daffodil International University",
+        "year": "2023",
+        "details": "Graduated with focus on Software Engineering and Quality Assurance"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "SQA: Manual & Automated Testing",
+        "issuer": "ostad.app",
+        "year": "2023",
+        "description": "Covering SQA methodologies, Selenium automation, and API testing principles."
+      },
+      {
+        "name": "Agile Testing & Automation",
+        "issuer": "LinkedIn Learning",
+        "year": "2023",
+        "description": "Advanced testing strategies in Agile and Scrum environments."
+      }
+    ],
+    "stats": {
+      "automationCoverage": 95,
+      "apiTesting": 90,
+      "manualTesting": 95,
+      "defectDetection": 85
+    }
+  }
