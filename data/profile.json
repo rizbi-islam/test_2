@@ -63,8 +63,10 @@
         "Detailed trace collection for debugging",
         "Modular test organization by feature"
       ],
+      "category": "Automation Testing",
       "github": "https://github.com/rizbiislam/AutomationExercise_testing",
-      "liveDemo": "automationexercise.com/"
+      "link": "https://automationexercise.com/",
+      "liveDemo": "https://automationexercise.com/"
     },
     {
       "id": 2,
@@ -78,15 +80,19 @@
         "Organized test suites (smoke, sanity, regression)",
         "Clean separation of locators and actions"
       ],
-      "github": "https://github.com/rizbiislam/Automation-Exercise-testing-with-Cypress"
+      "category": "Automation Testing",
+      "github": "https://github.com/rizbiislam/Automation-Exercise-testing-with-Cypress",
+      "link": "https://automationexercise.com/"
     },
     {
       "id": 3,
       "title": "OpenCart Automation",
       "description": "This repository appears to contain automation tests for the OpenCart e-commerce platform. The specific details about the framework and technologies used would need to be reviewed from the repository content directly, as access to analyze it wasn't available during this review.",
       "technologies": ["Automation Framework"],
+      "category": "E-commerce Testing",
       "note": "Repository content requires direct review for detailed analysis",
-      "github": "https://github.com/rizbiislam/OpenCart-Automation"
+      "github": "https://github.com/rizbiislam/OpenCart-Automation",
+      "link": "https://www.opencart.com/"
     }
   ],
   "experience": [
@@ -100,7 +106,8 @@
         "Performed end-to-end testing of full-stack systems including web UIs and backend logic",
         "Managed the complete defect lifecycle and coordinated fixes and retests for timely releases",
         "Contributed to two national-level government projects (DNCC & CCC Revenue Management Systems)"
-      ]
+      ],
+      "technologies": ["Playwright", "Cypress", "Postman", "JMeter"]
     },
     {
       "id": 2,
@@ -112,7 +119,8 @@
         "Automated critical UI workflows using multiple frameworks based on project needs",
         "Executed performance and load testing using JMeter and Locust",
         "Collaborated with developers and stakeholders in Agile/Scrum environments"
-      ]
+      ],
+      "technologies": ["Selenium", "JMeter", "Locust", "Agile"]
     }
   ],
   "education": [
@@ -128,5 +136,13 @@
       "issuer": "ostad.app",
       "year": "2023"
     }
-  ]
+  ],
+  "stats": {
+    "automationCoverage": 85,
+    "testAccuracy": 92,
+    "bugDetection": 88,
+    "ciCdIntegration": 90,
+    "testEfficiency": 87,
+    "clientSatisfaction": 94
+  }
 }

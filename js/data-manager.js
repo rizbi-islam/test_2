@@ -6,21 +6,24 @@ class PortfolioData {
 
     async init() {
         try {
+            console.log('Loading profile data...');
             // Load profile data
             const response = await fetch('data/profile.json');
-            if (!response.ok) throw new Error('Failed to load profile data');
+            if (!response.ok) {
+                console.error('Failed to fetch JSON:', response.status);
+                throw new Error('Failed to load profile data');
+            }
             
             this.data = await response.json();
+            console.log('Data loaded successfully:', this.data);
             this.initialized = true;
             
-            // Initialize all components
+            // Initialize only components that have HTML containers
             this.renderPersonalInfo();
             this.renderSkills();
             this.renderExperience();
             this.renderProjects();
-            this.renderEducation();
-            this.renderCertifications();
-            this.renderStats();
+            this.renderStats(); // Only render stats, education/certifications don't have containers
             
             console.log('Portfolio data loaded successfully');
         } catch (error) {
@@ -38,21 +41,29 @@ class PortfolioData {
         document.title = `${personal.name} | ${personal.title}`;
         document.querySelector('meta[name="description"]')?.setAttribute('content', personal.summary);
         
-        // Update elements
+        // Update elements (checking if they exist first)
         this.updateElement('hero-name', personal.name);
         this.updateElement('hero-title', personal.title);
-        this.updateElement('hero-tagline', personal.tagline);
         this.updateElement('hero-summary', personal.summary);
-        this.updateElement('hero-email', personal.email, 'href', `mailto:${personal.email}`);
-        this.updateElement('hero-phone', personal.phone, 'href', `tel:${personal.phone.replace(/\D/g, '')}`);
-        this.updateElement('hero-location', personal.location);
+        
+        // Update phone and location in contact section
+        const phoneElement = document.getElementById('hero-phone');
+        if (phoneElement) {
+            phoneElement.textContent = personal.phone;
+            phoneElement.href = `tel:${personal.phone.replace(/\D/g, '')}`;
+        }
+        
+        const locationElement = document.getElementById('hero-location');
+        if (locationElement) {
+            locationElement.textContent = personal.location;
+        }
         
         // Update social links
         this.updateElement('linkedin-link', 'LinkedIn', 'href', personal.social.linkedin);
         this.updateElement('github-link', 'GitHub', 'href', personal.social.github);
         
-        // Update resume download link
-        const resumeBtn = document.getElementById('download-resume');
+        // Update resume download link (check if button exists)
+        const resumeBtn = document.querySelector('.btn-outline[download]');
         if (resumeBtn && personal.resume) {
             resumeBtn.href = personal.resume;
             resumeBtn.download = 'Rizbi_Islam_Resume.pdf';
@@ -71,7 +82,10 @@ class PortfolioData {
         
         const skills = this.data.skills;
         const container = document.getElementById('skills-container');
-        if (!container) return;
+        if (!container) {
+            console.error('Skills container not found');
+            return;
+        }
         
         let html = '';
         
@@ -125,7 +139,10 @@ class PortfolioData {
         if (!this.data?.experience) return;
         
         const container = document.getElementById('experience-timeline');
-        if (!container) return;
+        if (!container) {
+            console.error('Experience container not found');
+            return;
+        }
         
         let html = '';
         
@@ -141,7 +158,7 @@ class PortfolioData {
                             ${exp.achievements.map(ach => `<li>${ach}</li>`).join('')}
                         </ul>
                         <div class="tech-used">
-                            ${exp.technologies.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                            ${(exp.technologies || []).map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
                         </div>
                     </div>
                 </div>
@@ -155,7 +172,10 @@ class PortfolioData {
         if (!this.data?.projects) return;
         
         const container = document.getElementById('projects-container');
-        if (!container) return;
+        if (!container) {
+            console.error('Projects container not found');
+            return;
+        }
         
         let html = '<div class="projects-grid">';
         
@@ -164,19 +184,17 @@ class PortfolioData {
                 <div class="project-card">
                     <div class="project-card-header">
                         <h3>${project.title}</h3>
-                        <div class="project-meta">
-                            <span class="project-category">${project.category}</span>
-                        </div>
+                        ${project.category ? `<div class="project-meta"><span class="project-category">${project.category}</span></div>` : ''}
                     </div>
                     <div class="project-card-body">
                         <p>${project.description}</p>
                         <div class="project-tech">
-                            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                            ${(project.technologies || []).map(tech => `<span>${tech}</span>`).join('')}
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        ${project.link !== '#' ? `<a href="${project.link}" class="btn-qa">View Project</a>` : ''}
-                        ${project.github !== '#' ? `<a href="${project.github}" class="btn-qa btn-outline">GitHub</a>` : ''}
+                        ${project.link && project.link !== '#' ? `<a href="${project.link}" target="_blank" class="btn-qa">View Project</a>` : ''}
+                        ${project.github && project.github !== '#' ? `<a href="${project.github}" target="_blank" class="btn-qa btn-outline">GitHub</a>` : ''}
                     </div>
                 </div>
             `;
@@ -186,22 +204,18 @@ class PortfolioData {
         container.innerHTML = html;
     }
 
-    renderEducation() {
-        if (!this.data?.education) return;
-        // Similar implementation
-    }
-
-    renderCertifications() {
-        if (!this.data?.certifications) return;
-        // Similar implementation
-    }
-
     renderStats() {
-        if (!this.data?.stats) return;
+        if (!this.data?.stats) {
+            console.error('No stats data found');
+            return;
+        }
         
         const stats = this.data.stats;
         const container = document.getElementById('stats-container');
-        if (!container) return;
+        if (!container) {
+            console.error('Stats container not found');
+            return;
+        }
         
         let html = '<div class="stats-grid">';
         
@@ -241,7 +255,8 @@ class PortfolioData {
     formatCategoryName(category) {
         return category
             .replace(/([A-Z])/g, ' $1')
-            .replace(/^./, str => str.toUpperCase());
+            .replace(/^./, str => str.toUpperCase())
+            .replace(/Ci Cd/gi, 'CI/CD');
     }
 
     updateElement(id, content, attribute = 'textContent', attrValue = null) {
@@ -270,8 +285,21 @@ class PortfolioData {
     }
 }
 
+// Debug the loading process
+console.log('PortfolioData script loaded');
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded, initializing portfolio...');
+    
+    // Test if containers exist
+    console.log('Checking containers:', {
+        skills: !!document.getElementById('skills-container'),
+        experience: !!document.getElementById('experience-timeline'),
+        projects: !!document.getElementById('projects-container'),
+        stats: !!document.getElementById('stats-container')
+    });
+    
     const portfolio = new PortfolioData();
     portfolio.init();
 });

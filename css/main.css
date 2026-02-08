@@ -835,3 +835,150 @@
     justify-content: center;
   }
 }
+
+
+
+
+/* Add these styles at the end of your main.css file */
+
+/* ===== SKILLS CONTAINER STYLES ===== */
+#skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.skill-items {
+    margin-top: var(--space-sm);
+}
+
+.skill-meter {
+    margin-bottom: var(--space-md);
+}
+
+/* ===== PROJECTS GRID STYLES ===== */
+#projects-container {
+    margin-top: var(--space-lg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-lg);
+}
+
+.project-category {
+    background: var(--qa-pending);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+/* ===== STATS GRID STYLES ===== */
+#stats-container {
+    margin-top: var(--space-lg);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card h3 {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--gradient-qa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: var(--space-sm) 0;
+}
+
+.stat-bar {
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: var(--space-md);
+}
+
+.stat-fill {
+    height: 100%;
+    background: var(--gradient-qa);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    width: 0%;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--qa-fail);
+    color: white;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    z-index: 9999;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.error-message button {
+    background: white;
+    color: var(--qa-fail);
+    border: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ===== SKILL TAGS IN SKILLS SECTION ===== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.skill-tag {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: scale(1.05);
+}
